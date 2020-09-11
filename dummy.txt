@@ -1,0 +1,7 @@
+1 This
+2 is
+3 a
+4 dummy
+5 text
+6 file
+7 This is a dummy sentence
