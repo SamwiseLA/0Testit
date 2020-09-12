@@ -61,7 +61,23 @@ n_most = max(s_test, key = l_test.count)
 
 print(f"Most Frequent Item: {n_most}")
 
+# Lambda -
+# -
+# use a variable BUT add parameters,
+# have the set up of that variable =
+# lambda & the number of parameters as new variables & :
+# then create any single return equation with those variables
+# and that will be the value of of the variable used
+# -
 pb()
+
+test1 = lambda ab, cd: ab + (cd * 3)
+test2 = lambda ab, cd: (ab + cd) * 3
+
+pb(test1(5, 3), "test1(5, 3): test1 = lambda ab, cd: ab + (cd * 3)")
+pb(test2(5, 3), "test2(5, 3): test2 = lambda ab, cd: (ab + cd) * 3")
+
+pb("",)
 
 orders = {
     'cappuccino': 54,
@@ -71,9 +87,21 @@ orders = {
     'cortado': 41
 }
 
+lb_orders = {"A":5, "B":6, "C":7, "D":8, "E":9}
+li_orders = lb_orders.items()
+
 l_items = orders.items()
 
-sort_orders = sorted(orders.items(), key=lambda x: x[0], reverse=True)
+sort_orders = sorted(orders.items(), key=lambda x: x[1], reverse=True)  # reverse order baseded on value x[1] in dict
+best_selling = max(orders.items(), key=lambda x: x[1]) # max number sold in dict based on value x[1]
+worst_selling = min(orders.items(), key=lambda x: x[1]) # min number sold in dict on value x[1]
 
+pb([l_items, sort_orders], "Originl & Sorted List")
+
+
+pb("","Sorted by number sold")
 for i in sort_orders:
     print(i[0], i[1])
+
+pb(best_selling[0],"Best Selling")
+pb(worst_selling[0],"Worst Selling")
